@@ -1,0 +1,38 @@
+/*static css*/
+
+h1 {
+  text-align: center;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 50px;
+  perspective: 360px;
+}
+
+.card {
+  width: 250px;
+  height: 340px;
+  transition: 0.9s;
+  backface-visibility: hidden;
+  background-color: black;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: black;
+}
+
+.back {
+  background-color: salmon;
+  transform: rotateY(180deg);
+}
