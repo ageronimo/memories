@@ -6,33 +6,56 @@ h1 {
 
 .flexContainer {
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
   margin-top: 50px;
-  perspective: 360px;
+  flex-direction: row;
+  justify-content: space-around;
+  /*perspective: 360px;*/
 }
 
 .card {
-  width: 250px;
-  height: 340px;
+ /* width: 250px;
+  height: 340px;*/
   transition: 0.9s;
+  transform-style: preserve-3d; /*<<IMPORTANT*/
   backface-visibility: hidden;
-  background-color: black;
 }
 
+.card, .front, .back {
+  width: 211px;
+  height: 299px;
+}
 .card:hover {
   transform: rotateY(180deg);
 }
 
 .front, .back {
   backface-visibility: hidden;
+  position: absolute;
 }
 
 .front {
-  background-color: black;
+  background-color: salmon;
+  /*width: 250px;
+  height: 340px;*/
+  background: url(../assets/cardBack.jpg) 0 0 no-repeat;
+  background-position: center;
 }
 
 .back {
-  background-color: salmon;
   transform: rotateY(180deg);
+  background-color: red;
+ /* width: 250px;
+  height: 340px;*/
+  background: url(../assets/duck.jpg);
+  background-position: center;
+ /* z-index: -1;*/
+}
+
+img {
+  /*margin-left: 50%;
+  margin-top: 50%;*/
+  overflow: hidden;
+  box-sizing: border-box;
+  /*width: 250px;
+  height: 340px;*/
 }
