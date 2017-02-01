@@ -1,5 +1,3 @@
-
-
 h1 {
   text-align: center;
 }
@@ -20,14 +18,14 @@ h1 {
   backface-visibility: hidden;
 }
 
+/*.card:hover {
+  transform: rotateY(180deg);
+}*/
+
 .card, .front, .back {
   width: 211px;
   height: 299px;
 }
-
-/*.card:hover {
-  transform: rotateY(180deg);
-}*/
 
 .front, .back {
   backface-visibility: hidden;
