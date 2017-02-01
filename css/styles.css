@@ -1,4 +1,4 @@
-/*static css*/
+
 
 h1 {
   text-align: center;
@@ -24,9 +24,10 @@ h1 {
   width: 211px;
   height: 299px;
 }
-.card:hover {
+
+/*.card:hover {
   transform: rotateY(180deg);
-}
+}*/
 
 .front, .back {
   backface-visibility: hidden;
