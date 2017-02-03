@@ -45,16 +45,25 @@ h1 {
   background-color: red;
  /* width: 250px;
   height: 340px;*/
-  background: url(../assets/duck.jpg);
-  background-position: center;
  /* z-index: -1;*/
 }
 
-img {
-  /*margin-left: 50%;
-  margin-top: 50%;*/
-  overflow: hidden;
-  box-sizing: border-box;
-  /*width: 250px;
-  height: 340px;*/
+#pic1 {
+  background: url(../assets/pic1.jpeg) 0 0 no-repeat;
+  background-position: center;
+}
+
+#pic2 {
+  background: url(../assets/pic2.jpg) 0 0 no-repeat;
+  background-position: center;
+}
+
+#pic3 {
+  background: url(../assets/pic3.jpg) 0 0 no-repeat;
+  background-position: center;
+}
+
+#pic4 {
+  background: url(../assets/pic4.jpeg) 0 0 no-repeat;
+  background-position: center;
 }

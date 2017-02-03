@@ -1,31 +1,30 @@
 var cardIsFlipped = false;
-var rotationStatus = [];
-var i;
+var rotationQueue = [];
+var picQueue = [];
 
-function flipCard(idName) {
+function flipCard(idName, secondChild) {
   //flips card to back
+  console.log(idName + secondChild);
 	var showBack = document.getElementById(idName);
   showBack.style.transform = "rotateY(180deg)";
  
   //checks if two cards are flipped 
-  if (rotationStatus.length < 2) {
-    rotationStatus.push(idName);    
+  console.log(rotationQueue);   
+  if(rotationQueue.length < 2){
+    rotationQueue.push(idName); 
+    // picQueue.push() 
+    //^ after seeing that pic ids are same, deletes divs, look up how to access id within div
+  } 
+  if(rotationQueue.length == 2){
+    setTimeout(function(){
+      document.getElementById(rotationQueue[0]).style.transform = "rotateY(0deg)";
+      document.getElementById(rotationQueue[1]).style.transform = "rotateY(0deg)";
+    }, 1000);
+    setTimeout(function() {
+      rotationQueue.splice(1, 1);
+      rotationQueue.splice(0, 1);
+    }, 1100);
   }
 
-  if (rotationStatus.length == 2) {
-  document.getElementById(rotationStatus[0]).style.transform = "rotateY(0deg)";
-  document.getElementById(rotationStatus[1]).style.transform = "rotateY(0deg)";
-  }
 
-    // count--;
-  
-//   for (i = 0; i < rotationStatus.length; i++) {
-//     if (rotationStatus[i] == "unflipped"){
-//       showBack.style.transform = "rotateY(180deg)";
-//       console.log("unflipped");
-//     } else {
-//       showBack.style.transform = "rotateY(0deg)";
-//       console.log("flipped");
-//     }
-//   }
 }
