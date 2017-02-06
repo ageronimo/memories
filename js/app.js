@@ -1,10 +1,14 @@
-var cardIsFlipped = false;
+var cardNum = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+var cardPics = [1,1,2,2,3,3,4,4];
 var rotationQueue = [];
 var picQueue = [];
 
-function flipCard(idName, secondChild) {
+function cardRandomizer {
+  //
+}
+
+function flipCard(idName) {
   //flips card to back
-  console.log(idName + secondChild);
 	var showBack = document.getElementById(idName);
   showBack.style.transform = "rotateY(180deg)";
  
@@ -13,7 +17,7 @@ function flipCard(idName, secondChild) {
   if(rotationQueue.length < 2){
     rotationQueue.push(idName); 
     // picQueue.push() 
-    //^ after seeing that pic ids are same, deletes divs, look up how to access id within div
+    //^ after seeing that pic ids are sam   e, deletes divs, look up how to access id within div
   } 
   if(rotationQueue.length == 2){
     setTimeout(function(){
