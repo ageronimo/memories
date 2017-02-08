@@ -43,6 +43,7 @@ h1 {
 .back {
   transform: rotateY(180deg);
   background-color: red;
+  background-position: center;
  /* width: 250px;
   height: 340px;*/
  /* z-index: -1;*/
