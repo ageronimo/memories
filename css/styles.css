@@ -7,20 +7,13 @@ h1 {
   margin-top: 50px;
   flex-direction: row;
   justify-content: space-around;
-  /*perspective: 360px;*/
 }
 
 .card {
- /* width: 250px;
-  height: 340px;*/
   transition: 0.9s;
   transform-style: preserve-3d; /*<<IMPORTANT*/
   backface-visibility: hidden;
 }
-
-/*.card:hover {
-  transform: rotateY(180deg);
-}*/
 
 .card, .front, .back {
   width: 211px;
@@ -34,8 +27,6 @@ h1 {
 
 .front {
   background-color: salmon;
-  /*width: 250px;
-  height: 340px;*/
   background: url(../assets/cardBack.jpg) 0 0 no-repeat;
   background-position: center;
 }
@@ -44,27 +35,4 @@ h1 {
   transform: rotateY(180deg);
   background-color: red;
   background-position: center;
- /* width: 250px;
-  height: 340px;*/
- /* z-index: -1;*/
 }
-
-/*#pic1 {
-  background: url(../assets/pic1.jpeg) 0 0 no-repeat;
-  background-position: center;
-}
-
-#pic2 {
-  background: url(../assets/pic2.jpg) 0 0 no-repeat;
-  background-position: center;
-}
-
-#pic3 {
-  background: url(../assets/pic3.jpg) 0 0 no-repeat;
-  background-position: center;
-}
-
-#pic4 {
-  background: url(../assets/pic4.jpeg) 0 0 no-repeat;
-  background-position: center;
-}*/
