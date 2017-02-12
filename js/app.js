@@ -5,7 +5,7 @@ var picQueue = [];
 var i;
 var scored = [];
 var x = 0; //for scoreboard
-// var idMatch = document.getElementsByClassName("back")[i].id;
+var cardInvis = 
 
 function cardRandomizer() {
   //combine strings
@@ -42,7 +42,7 @@ function flipCard(idName) {
   if(rotationQueue.length < 2){
     rotationQueue.push(idName); 
     picQueue.push(idMatch); 
-    //^ after seeing that pic ids are sam   e, deletes divs, look up how to access id within div
+    //^ after seeing that pic ids are same, deletes divs, look up how to access id within div
   } 
   console.log(x);
   if (rotationQueue.length == 2) {
