@@ -2,10 +2,11 @@ var cardNum = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
 var cardPics = [1,1,2,2,3,3,4,4];
 var rotationQueue = [];
 var picQueue = [];
-var i;
+var i; // for loop in setting up cards
 var scored = [];
 var x = 0; //for scoreboard
-var cardInvis = 
+var start = false; //'start' button not pushed
+var sec = 30; //for seconds
 
 function cardRandomizer() {
   //combine strings
@@ -39,44 +40,35 @@ function flipCard(idName) {
 
   //checks if two cards are flipped   
   var idMatch = showBack.getElementsByClassName("back")[0].id;
-  if(rotationQueue.length < 2){
+  if (rotationQueue.length < 2) {
     rotationQueue.push(idName); 
     picQueue.push(idMatch); 
     //^ after seeing that pic ids are same, deletes divs, look up how to access id within div
   } 
-  console.log(x);
   if (rotationQueue.length == 2) {
-    setTimeout (function() {
-      if (picQueue[0] == picQueue[1]) {
-        // var deleteMe = document.getElementById(rotationQueue[0]);
-        // var deleteMe2 = document.getElementById(rotationQueue[1]);
-        // deleteMe.parentNode.removeChild(deleteMe);
-        // deleteMe2.parentNode.removeChild(deleteMe2);
-
-        document.getElementById(rotationQueue[0]).style.opacity = "0";
-        document.getElementById(rotationQueue[1]).style.opacity = "0";
-        
-        x = x+1; //inc score
-      }
-    }, 900);
-    setTimeout(function(){
-      document.getElementById(rotationQueue[0]).style.transform = "rotateY(0deg)";
-      document.getElementById(rotationQueue[1]).style.transform = "rotateY(0deg)";
-      document.getElementById("score").innerHTML = "Score: "+x;
-      
-      // alerts if you won
-    }, 1000);
-    // if (idMatch[0] !== idMatch[1]) {
-    //   showBack.parentNode.removeChild(showBack); 
-    // }
-    setTimeout(function() {
-      rotationQueue.splice(0, 2);
-      picQueue.splice(0, 2);
-      if (x == 4) {
-        alert("You won! :D");
-      }
-    }, 1050);
-  }
+	  if (picQueue[0] == picQueue[1]) {
+	    setTimeout (function() {
+	        document.getElementById(rotationQueue[0]).style.opacity = "0";
+	        document.getElementById(rotationQueue[1]).style.opacity = "0";
+	        
+	        x = x+1; //inc score
+	      }, 700);
+	  } 
+	  
+	  setTimeout(function(){
+	    document.getElementById(rotationQueue[0]).style.transform = "rotateY(0deg)";
+	    document.getElementById(rotationQueue[1]).style.transform = "rotateY(0deg)";
+	    document.getElementById("score").innerHTML = "Score: "+x;
+	  }, 1000);
+	  
+	  setTimeout(function() {
+	      rotationQueue.splice(0, 2);
+	      picQueue.splice(0, 2);
+	      if (x == 4) {
+	        alert("You won! :D");
+	      }
+	    }, 1050);
+}
 
 
 }
