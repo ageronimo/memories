@@ -65,9 +65,6 @@ function flipCard(idName) {
       document.getElementById("score").innerHTML = "Score: "+x;
       
       // alerts if you won
-      if (x == 4) {
-        alert("You won! :D");
-      }
     }, 1000);
     // if (idMatch[0] !== idMatch[1]) {
     //   showBack.parentNode.removeChild(showBack); 
@@ -75,6 +72,9 @@ function flipCard(idName) {
     setTimeout(function() {
       rotationQueue.splice(0, 2);
       picQueue.splice(0, 2);
+      if (x == 4) {
+        alert("You won! :D");
+      }
     }, 1050);
   }
 
