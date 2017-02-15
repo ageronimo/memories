@@ -46,37 +46,29 @@ function flipCard(idName) {
   } 
   console.log(x);
   if (rotationQueue.length == 2) {
-    setTimeout (function() {
-      if (picQueue[0] == picQueue[1]) {
-        // var deleteMe = document.getElementById(rotationQueue[0]);
-        // var deleteMe2 = document.getElementById(rotationQueue[1]);
-        // deleteMe.parentNode.removeChild(deleteMe);
-        // deleteMe2.parentNode.removeChild(deleteMe2);
-
-        document.getElementById(rotationQueue[0]).style.opacity = "0";
-        document.getElementById(rotationQueue[1]).style.opacity = "0";
-        
-        x = x+1; //inc score
-      }
-    }, 900);
+    if (picQueue[0] == picQueue[1]) {
+      setTimeout (function() {
+          document.getElementById(rotationQueue[0]).style.opacity = "0";
+          document.getElementById(rotationQueue[1]).style.opacity = "0";
+          
+          x = x+1; //inc score
+        }, 700);
+    } 
+    
     setTimeout(function(){
       document.getElementById(rotationQueue[0]).style.transform = "rotateY(0deg)";
       document.getElementById(rotationQueue[1]).style.transform = "rotateY(0deg)";
       document.getElementById("score").innerHTML = "Score: "+x;
-      
-      // alerts if you won
     }, 1000);
-    // if (idMatch[0] !== idMatch[1]) {
-    //   showBack.parentNode.removeChild(showBack); 
-    // }
+    
     setTimeout(function() {
-      rotationQueue.splice(0, 2);
-      picQueue.splice(0, 2);
-      if (x == 4) {
-        alert("You won! :D");
-      }
-    }, 1050);
-  }
+        rotationQueue.splice(0, 2);
+        picQueue.splice(0, 2);
+        if (x == 4) {
+          alert("You won! :D");
+        }
+      }, 1050);
+    }
 
 
 }
